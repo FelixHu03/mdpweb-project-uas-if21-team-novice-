@@ -1,0 +1,89 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\layananTambahan;
+use Illuminate\Http\Request;
+
+class LayananTambahanController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $layanan_tambahan = layananTambahan::all();
+        return view('layanan_tambahan.index')->with('layanan_tambahan', $layanan_tambahan);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+       return view('layanan_tambahan.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        if($request->user()->cannot('create', layananTambahan::class)){
+            abort(403, 'anda tidak memiliki akses');
+        }
+         $val = $request->validate([
+            'id_layanan' => 'required',
+            'nama_layanan' => 'required',
+            'harga_layanan_tambahan' => 'required|integer',
+        ]);
+
+        layananTambahan::create($val);
+
+        // redirect ke route layanan_tambahan
+        return redirect()->route('layanan_tambahan.index')
+            ->with('success', $val['nama_layanan'].' berhasil disimpan');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(layananTambahan $layanan_tambahan, Request $request)
+    {
+        if($request->user()->cannot('view', $layanan_tambahan)){
+            abort(403, 'anda tidak memiliki akses');
+        }
+        return view('layanan_tambahan.show')
+        ->with('layanan_tambahan', $layanan_tambahan);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(layananTambahan $layanan_tambahan)
+    {
+        return view('layanan_tambahan.edit')->with('layanan_tambahan', $layanan_tambahan);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, layananTambahan $layanan_tambahan)
+    {
+        $val = $request->validate([
+            'id_layanan' => 'required|size:5|unique:layanan_tambahans,id_layanan,' . $layanan_tambahan->id_layanan . ',id_layanan',
+            'nama_layanan' => 'required|max:255|unique:layanan_tambahans,nama_layanan,' . $layanan_tambahan->id_layanan . ',id_layanan',
+            'harga_layanan_tambahan' => 'required|integer',
+        ]);
+
+        $layanan_tambahan->update($val);
+
+        return redirect()->route('layanan_tambahan.index')->with('success', 'Layanan berhasil diperbarui');
+    }
+    public function destroy(layananTambahan $layanan_tambahan)
+{
+    $layanan_tambahan->delete();
+    return redirect()->route('layanan_tambahan.index')->with('success', 'Data Berhasil dihapus');
+}
+
+}
