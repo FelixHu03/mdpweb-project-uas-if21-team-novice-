@@ -25,6 +25,6 @@ class Pemesanan extends Model
     }
     public function tamu()
     {
-        return $this->belongsTo(tamu::class, 'id_tamu', 'id_tamu');
+        return $this->belongsTo(Tamu::class, 'id_tamu', 'id_tamu');
     }
 }
