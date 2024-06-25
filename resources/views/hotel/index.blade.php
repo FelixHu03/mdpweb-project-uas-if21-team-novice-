@@ -3,6 +3,37 @@
 @section('halaman', 'Dashboard')
 @section('namaHalaman', 'Dashboard')
 @section('content')
+<h4>Hotel LIOX</h4>
+<article>
+    Selamat datang di Hotel LIOX, destinasi akomodasi mewah yang memadukan kenyamanan modern dengan sentuhan elegan.
+    Terletak strategis di jantung kota, Hotel LIOX menawarkan pengalaman menginap yang luar biasa dengan pemandangan
+    menakjubkan,
+    layanan berkualitas tinggi, dan fasilitas kelas dunia yang dirancang untuk memenuhi kebutuhan setiap tamu.
+</article>
+<h4>Fasilitas</h4>
+<article>
+    Hotel LIOX dilengkapi dengan berbagai fasilitas untuk memastikan kenyamanan dan kemudahan Anda selama menginap:
+    <span>
+        <ol>
+            <ul>Kolam Renang Infinity: Bersantai di tepi kolam renang infinity kami sambil menikmati pemandangan kota
+                yang
+                spektakuler.
+            </ul>
+            <ul>
+                Pusat Kebugaran: Tetap bugar selama perjalanan Anda dengan fasilitas gym modern yang tersedia 24 jam.
+            </ul>
+            <ul>
+                Rooftop Bar: Untuk merasakan suasana dingin yang sunyi ditengah daerah perkotaan yang ramai ditemani kehangatan dari kopi dan teh.
+            </ul>
+            <ul>
+                Ruang Pertemuan dan Ballroom: Hotel LIOX menyediakan ruang pertemuan dan ballroom yang ideal untuk acara
+                bisnis
+                dan
+                sosial, dilengkapi dengan teknologi canggih dan layanan profesional.
+            </ul>
+        </ol>
+    </span>
+</article>
     @can('viewAny', App\Models\Hotel::class)
         <div class="card">
             <div class="card-body">
@@ -121,35 +152,5 @@
             </div>
         </div>
     @endcan
-    <h4>Hotel LIOX</h4>
-    <article>
-        Selamat datang di Hotel LIOX, destinasi akomodasi mewah yang memadukan kenyamanan modern dengan sentuhan elegan.
-        Terletak strategis di jantung kota, Hotel LIOX menawarkan pengalaman menginap yang luar biasa dengan pemandangan
-        menakjubkan,
-        layanan berkualitas tinggi, dan fasilitas kelas dunia yang dirancang untuk memenuhi kebutuhan setiap tamu.
-    </article>
-    <h4>Fasilitas</h4>
-    <article>
-        Hotel LIOX dilengkapi dengan berbagai fasilitas untuk memastikan kenyamanan dan kemudahan Anda selama menginap:
-        <span>
-            <ol>
-                <li>Kolam Renang Infinity: Bersantai di tepi kolam renang infinity kami sambil menikmati pemandangan kota
-                    yang
-                    spektakuler.
-                </li>
-                <li>
-                    Pusat Kebugaran: Tetap bugar selama perjalanan Anda dengan fasilitas gym modern yang tersedia 24 jam.
-                </li>
-                <li>
-                    Spa dan Wellness: Manjakan diri Anda dengan perawatan spa yang menenangkan dan memulihkan energi.
-                </li>
-                <li>
-                    Ruang Pertemuan dan Ballroom: Hotel LIOX menyediakan ruang pertemuan dan ballroom yang ideal untuk acara
-                    bisnis
-                    dan
-                    sosial, dilengkapi dengan teknologi canggih dan layanan profesional.
-                </li>
-            </ol>
-        </span>
-    </article>
+   
 @endsection
