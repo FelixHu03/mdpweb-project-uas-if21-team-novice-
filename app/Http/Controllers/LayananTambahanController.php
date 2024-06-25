@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\layananTambahan;
+use App\Models\LayananTambahan as ModelsLayananTambahan;
 use Illuminate\Http\Request;
 
 class LayananTambahanController extends Controller
@@ -12,7 +13,7 @@ class LayananTambahanController extends Controller
      */
     public function index()
     {
-        $layanan_tambahan = layananTambahan::all();
+        $layanan_tambahan = ModelsLayananTambahan::all();
         return view('layanan_tambahan.index')->with('layanan_tambahan', $layanan_tambahan);
     }
 
