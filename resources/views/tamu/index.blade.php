@@ -16,7 +16,6 @@
           <tr>
             <th scope="col">Id Tamu</th>
             <th scope="col">Nama</th>
-            <th scope="col">Nomor Telepon</th> 
             <th scope="col">Confirm</th>
           </tr>
         </thead>
@@ -26,13 +25,17 @@
           <tr>
             <td>{{ $tm['id_tamu'] }}</td>
             <td>{{ $tm['nama'] }}</td>
-            <td>{{ $tm['no_telepon']}}</td>
             {{-- <td>{{ $tm ['create_at'] }}</td> --}}
             <td>
+              @can('view', $tm)
               <a href="{{ route('tamu.show', $tm['id_tamu']) }}"
               class="btn btn-outline-info btn-sm btn-rounded"> Show</a>
+              @endcan
+              @can('update', $tm)
           <a href="{{ route('tamu.edit', $tm['id_tamu']) }}"
               class="btn btn-outline-info btn-sm btn-rounded">Ubah</a>
+              @endcan
+              @can('delete', $tm)
           <form action="{{ route('tamu.destroy', $tm->id_tamu) }}" method="post" style="display: inline">
               @method('DELETE')
               @csrf
@@ -40,6 +43,7 @@
                   data-toggle="tooltip" data-nama="{{ $tm['nama'] }}"
                   title="Hapus" >Hapus</button>
           </form>
+          @endcan
       </td>
           </tr>
           
