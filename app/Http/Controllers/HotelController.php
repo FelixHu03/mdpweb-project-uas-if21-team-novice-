@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hotel;
-use App\Models\layananTambahan;
+use App\Models\LayananTambahan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -37,7 +37,7 @@ class HotelController extends Controller
         );
         
         $user = User::all();
-        $layanan_tambahan = layananTambahan::all();
+        $layanan_tambahan = LayananTambahan::all();
         return view('hotel.index')
             ->with('user', $user)
             ->with('hotelLayanan', $hotelLayanan)
