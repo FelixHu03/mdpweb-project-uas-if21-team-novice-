@@ -14,6 +14,7 @@ class PegawaiController extends Controller
     /**
      * Display a listing of the resource.
      */
+    //tes
     public function index()
     {
         $pegawai = pegawai::all();

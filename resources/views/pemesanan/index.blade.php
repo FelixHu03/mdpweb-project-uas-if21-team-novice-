@@ -5,7 +5,6 @@
 @section('content')
 <div class="card">
     @can('create', App\Models\Pemesanan::class)
-        
     <a href="{{ url('pemesanan/create') }}" class="btn btn-outline-primary m-2">Tambah</a>
     @endcan
     <div class="card-body">
