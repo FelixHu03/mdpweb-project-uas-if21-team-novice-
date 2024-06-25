@@ -7,8 +7,6 @@
     <div class="card">
         @can('create', App\Models\LayananTambahan::class)
             <a href="{{ route('layanan_tambahan.create') }}" class="btn btn-outline-primary">Tambah</a>
-        @else
-            <p>User cannot create layanan tambahan</p>
         @endcan
         <div class="card-body">
 
@@ -29,13 +27,10 @@
                     <td>
                         @can('view', $lyn)
                             <a href="{{ route('layanan_tambahan.show', $lyn['id_layanan']) }}" class="btn btn-outline-info btn-sm btn-rounded">Show</a>
-                        @else
-                            <p>User cannot view this layanan tambahan</p>
+
                         @endcan
                         @can('update', $lyn)
                             <a href="{{ route('layanan_tambahan.edit', $lyn['id_layanan']) }}" class="btn btn-outline-info btn-sm btn-rounded">Ubah</a>
-                        @else
-                            <p>User cannot update this layanan tambahan</p>
                         @endcan
                         @can('delete', $lyn)
                             <form action="{{ route('layanan_tambahan.destroy', $lyn->id_layanan) }}" method="post" style="display: inline">
@@ -43,8 +38,6 @@
                                 @csrf
                                 <button type="submit" class="btn btn-outline-danger btn-sm btn-rounded show_confirm" data-toggle="tooltip" data-nama="{{ $lyn['nama_layanan'] }}" title="Hapus">Hapus</button>
                             </form>
-                        @else
-                            <p>User cannot delete this layanan tambahan</p>
                         @endcan
                     </td>
                 </tr>
