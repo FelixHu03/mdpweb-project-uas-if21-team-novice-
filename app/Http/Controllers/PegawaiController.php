@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\jenis_kelamin;
 use App\Models\kota;
-use App\Models\layananTambahan;
+use App\Models\LayananTambahan;
 use App\Models\pegawai;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
@@ -26,7 +26,7 @@ class PegawaiController extends Controller
     public function create()
     {
         $kota = kota::all();
-        $layanan = layananTambahan::all();
+        $layanan = LayananTambahan::all();
         $jenis_kelamin = jenis_kelamin::all();
         // dd($jenis_kelamin);
         return view('pegawai.create')
@@ -88,7 +88,7 @@ class PegawaiController extends Controller
      */
     public function edit(pegawai $pegawai)
     {
-        $layanan = layananTambahan::all();
+        $layanan = LayananTambahan::all();
         $kota = kota::all();
         $jenis_kelamin = jenis_kelamin::all();
 
