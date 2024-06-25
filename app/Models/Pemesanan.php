@@ -21,7 +21,7 @@ class Pemesanan extends Model
 
     public function layananTambahan()
     {
-        return $this->belongsTo(layananTambahan::class, 'id_layanan', 'id_layanan');
+        return $this->belongsTo(LayananTambahan::class, 'id_layanan', 'id_layanan');
     }
     public function tamu()
     {

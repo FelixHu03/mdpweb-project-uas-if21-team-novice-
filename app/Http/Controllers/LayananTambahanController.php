@@ -30,7 +30,7 @@ class LayananTambahanController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->user()->cannot('create', layananTambahan::class)){
+        if($request->user()->cannot('create', LayananTambahan::class)){
             abort(403, 'anda tidak memiliki akses');
         }
          $val = $request->validate([
@@ -39,7 +39,7 @@ class LayananTambahanController extends Controller
             'harga_layanan_tambahan' => 'required|integer',
         ]);
 
-        layananTambahan::create($val);
+        LayananTambahan::create($val);
 
         // redirect ke route layanan_tambahan
         return redirect()->route('layanan_tambahan.index')
@@ -49,7 +49,7 @@ class LayananTambahanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(layananTambahan $layanan_tambahan, Request $request)
+    public function show(LayananTambahan $layanan_tambahan, Request $request)
     {
         if($request->user()->cannot('view', $layanan_tambahan)){
             abort(403, 'anda tidak memiliki akses');
@@ -61,7 +61,7 @@ class LayananTambahanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(layananTambahan $layanan_tambahan)
+    public function edit(LayananTambahan $layanan_tambahan)
     {
         return view('layanan_tambahan.edit')->with('layanan_tambahan', $layanan_tambahan);
     }
@@ -69,7 +69,7 @@ class LayananTambahanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, layananTambahan $layanan_tambahan)
+    public function update(Request $request, LayananTambahan $layanan_tambahan)
     {
         $val = $request->validate([
             'id_layanan' => 'required|size:5|unique:layanan_tambahans,id_layanan,' . $layanan_tambahan->id_layanan . ',id_layanan',
@@ -81,10 +81,10 @@ class LayananTambahanController extends Controller
 
         return redirect()->route('layanan_tambahan.index')->with('success', 'Layanan berhasil diperbarui');
     }
-    public function destroy(layananTambahan $layanan_tambahan)
-{
-    $layanan_tambahan->delete();
-    return redirect()->route('layanan_tambahan.index')->with('success', 'Data Berhasil dihapus');
-}
+    public function destroy(LayananTambahan $layanan_tambahan)
+    {
+        $layanan_tambahan->delete();
+        return redirect()->route('layanan_tambahan.index')->with('success', 'Data Berhasil dihapus');
+    }
 
 }

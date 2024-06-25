@@ -19,7 +19,7 @@ class pegawai extends Model
         return $this-> belongsTo(kota::class, 'kota_id');
     }
     public function layanan(){
-        return $this->belongsTo(layananTambahan::class, "id_layanan", "id_layanan");
+        return $this->belongsTo(LayananTambahan::class, "id_layanan", "id_layanan");
     }
     public function jk(){
         return $this-> belongsTo(jenis_kelamin::class, 'jenis_kelamin');
