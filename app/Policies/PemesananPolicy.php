@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Models\pemesanan;
 use Illuminate\Auth\Access\Response;
 
-class pemesananPolicy
+class PemesananPolicy
 {
     /**
      * Determine whether the user can view any models.
