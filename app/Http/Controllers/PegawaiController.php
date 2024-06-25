@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\jenis_kelamin;
 use App\Models\kota;
 use App\Models\LayananTambahan;
-use App\Models\pegawai;
+use App\Models\Pegawai;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
@@ -17,7 +17,7 @@ class PegawaiController extends Controller
     //tes
     public function index()
     {
-        $pegawai = pegawai::all();
+        $pegawai = Pegawai::all();
         return view('pegawai.index')-> with('pegawai', $pegawai);
     }
 
@@ -41,7 +41,7 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->user()->cannot('create', pegawai::class)){
+        if($request->user()->cannot('create', Pegawai::class)){
             abort(403, 'anda tidak memiliki akses');
         }
         $val = $request->validate([
@@ -75,7 +75,7 @@ class PegawaiController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(pegawai $pegawai ,Request $request)
+    public function show(Pegawai $pegawai ,Request $request)
     {
         if($request->user()->cannot('view', $pegawai)){
             abort(403, 'anda tidak memiliki akses');
@@ -87,7 +87,7 @@ class PegawaiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(pegawai $pegawai)
+    public function edit(Pegawai $pegawai)
     {
         $layanan = LayananTambahan::all();
         $kota = kota::all();
@@ -103,7 +103,7 @@ class PegawaiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, pegawai $pegawai)
+    public function update(Request $request, Pegawai $pegawai)
     {
         if ($request->hasFile('url_foto')) {
             File::delete('foto/' . $pegawai['url_foto']);
@@ -146,7 +146,7 @@ class PegawaiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(pegawai $pegawai)
+    public function destroy(Pegawai $pegawai)
     {
         // dd($pegawai);
         File::delete('foto/'.$pegawai['url_foto']);
