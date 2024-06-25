@@ -10,7 +10,7 @@
     menakjubkan,
     layanan berkualitas tinggi, dan fasilitas kelas dunia yang dirancang untuk memenuhi kebutuhan setiap tamu.
 </article>
-<h4>Fasilitas</h4>
+<h4>Fasilitas</h4><br>
 <article>
     Hotel LIOX dilengkapi dengan berbagai fasilitas untuk memastikan kenyamanan dan kemudahan Anda selama menginap:
     <span>
