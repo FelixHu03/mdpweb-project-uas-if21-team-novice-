@@ -9,8 +9,8 @@
     Terletak strategis di jantung kota, Hotel LIOX menawarkan pengalaman menginap yang luar biasa dengan pemandangan
     menakjubkan,
     layanan berkualitas tinggi, dan fasilitas kelas dunia yang dirancang untuk memenuhi kebutuhan setiap tamu.
-</article>
-<h4>Fasilitas</h4><br>
+</article><br>
+<h4>Fasilitas</h4>
 <article>
     Hotel LIOX dilengkapi dengan berbagai fasilitas untuk memastikan kenyamanan dan kemudahan Anda selama menginap:
     <span>
