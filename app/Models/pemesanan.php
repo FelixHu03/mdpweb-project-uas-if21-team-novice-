@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pemesanan extends Model
 {
     use HasFactory;
-    
+ // rename   
     protected $fillable = ['id_pemesanan', 'id_tamu', 'id_kamar', 'tgl_check_in', 'tgl_check_out', 'total_biaya', 'status_bayar'];
     public $incrementing = false;
     protected $keyType = 'char';

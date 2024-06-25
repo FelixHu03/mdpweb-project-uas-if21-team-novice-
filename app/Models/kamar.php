@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class kamar extends Model
-{
+class Kamar extends Model
+{// rename
     use HasFactory;
     protected $fillable = ['id_kamar','tipe_kamar', 'harga','status', 'url_foto'];
     public $incrementing = false;
