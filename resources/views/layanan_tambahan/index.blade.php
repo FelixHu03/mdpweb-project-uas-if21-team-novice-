@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="card">
-        @can('create', App\Models\layananTambahan::class)
+        @can('create', App\Models\LayananTambahan::class)
             <a href="{{ route('layanan_tambahan.create') }}" class="btn btn-outline-primary">Tambah</a>
         @else
             <p>User cannot create layanan tambahan</p>
