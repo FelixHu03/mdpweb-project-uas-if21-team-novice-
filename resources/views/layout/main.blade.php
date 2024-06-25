@@ -732,7 +732,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="{{ url('/hotel') }}" class="logo d-flex align-items-center">
                 <img src="{{ url('img/liox.jpg') }}" alt="" style="border-radius: 50%; ">
                 <span class="d-none d-lg-block">LIOX Hotel</span>
             </a>
