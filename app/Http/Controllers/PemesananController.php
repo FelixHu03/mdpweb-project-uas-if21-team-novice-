@@ -6,7 +6,7 @@ use App\Models\Hotel;
 use App\Models\Kamar;
 use App\Models\LayananTambahan;
 use App\Models\Pemesanan;
-use App\Models\tamu;
+use App\Models\Tamu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,7 +22,7 @@ class PemesananController extends Controller
     {
         $kamar = Kamar::all();
         $layanan = LayananTambahan::all();
-        $tamu = tamu::all();
+        $tamu = Tamu::all();
 
         $kamarPrices = $kamar->pluck('harga', 'id');
         $layananPrices = $layanan->pluck('harga', 'id');
@@ -107,7 +107,7 @@ class PemesananController extends Controller
         $pemesanan = Pemesanan::findOrFail($id_pemesanan);
         $kamar = Kamar::all();
         $layanan = LayananTambahan::all();
-        $tamu = tamu::all();
+        $tamu = Tamu::all();
         return view('pemesanan.edit', compact('pemesanan', 'kamar', 'layanan', 'tamu'));
     }
 
