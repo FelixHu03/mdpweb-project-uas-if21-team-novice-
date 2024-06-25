@@ -14,24 +14,24 @@
 <article>
     Hotel LIOX dilengkapi dengan berbagai fasilitas untuk memastikan kenyamanan dan kemudahan Anda selama menginap:
     <span>
-        <ol>
-            <ul>Kolam Renang Infinity: Bersantai di tepi kolam renang infinity kami sambil menikmati pemandangan kota
+        <ul>
+            <li>Kolam Renang Infinity: Bersantai di tepi kolam renang infinity kami sambil menikmati pemandangan kota
                 yang
                 spektakuler.
-            </ul>
-            <ul>
+            </li>
+            <li>
                 Pusat Kebugaran: Tetap bugar selama perjalanan Anda dengan fasilitas gym modern yang tersedia 24 jam.
-            </ul>
-            <ul>
+            </li>
+            <li>
                 Rooftop Bar: Untuk merasakan suasana dingin yang sunyi ditengah daerah perkotaan yang ramai ditemani kehangatan dari kopi dan teh.
-            </ul>
-            <ul>
+            </li>
+            <li>
                 Ruang Pertemuan dan Ballroom: Hotel LIOX menyediakan ruang pertemuan dan ballroom yang ideal untuk acara
                 bisnis
                 dan
                 sosial, dilengkapi dengan teknologi canggih dan layanan profesional.
-            </ul>
-        </ol>
+            </li>
+        </ul>
     </span>
 </article>
     @can('viewAny', App\Models\Hotel::class)
