@@ -14,7 +14,7 @@ class PemesananController extends Controller
 {
     public function index()
     {
-        $pemesanan = Pemesanan::with('kamar', 'layananTambahan', 'tamu')->get();
+        $pemesanan = Pemesanan::with('Kamar', 'LayananTambahan', 'Tamu')->get();
         return view('pemesanan.index', compact('pemesanan'));
     }
 
@@ -91,7 +91,7 @@ class PemesananController extends Controller
     public function show($id_pemesanan)
     {
         // Menggunakan nama relasi yang benar seperti yang didefinisikan di model Pemesanan
-        $pemesanan = Pemesanan::with('kamar', 'layananTambahan', 'tamu')->findOrFail($id_pemesanan);
+        $pemesanan = Pemesanan::with('Kamar', 'LayananTambahan', 'Tamu')->findOrFail($id_pemesanan);
     
         // dd($pemesanan->toArray());
     
