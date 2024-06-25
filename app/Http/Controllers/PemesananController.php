@@ -142,7 +142,7 @@ class PemesananController extends Controller
             'status_bayar' => $request->status_bayar,
             'total_biaya' => $total_biaya,
         ];
-        Pemesanan::update($value);
+        $pemesanan->update($value);
 
         return redirect()->route('pemesanan.index')->with('success', 'Pemesanan berhasil disimpan');
     }
