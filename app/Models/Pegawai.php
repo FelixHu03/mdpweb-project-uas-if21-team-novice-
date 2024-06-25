@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use PhpParser\Node\Expr\FuncCall;
 
-class pegawai extends Model
+class Pegawai extends Model
 {
     use HasFactory;
     protected $fillable = ['nama','tempat_lahir','no_telepon', 'alamat','jenis_kelamin',
