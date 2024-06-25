@@ -3,6 +3,9 @@
 @section('halaman', 'Dashboard')
 @section('namaHalaman', 'Dashboard')
 @section('content')
+@can('viewAny', App\Models\Hotel::class)
+    
+
 
     <div class="card">
         <div class="card-body">
@@ -119,4 +122,5 @@
             <!-- End Pie Chart -->
         </div>
     </div>
+    @endcan
 @endsection
