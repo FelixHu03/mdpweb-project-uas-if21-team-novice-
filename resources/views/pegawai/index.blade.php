@@ -53,4 +53,5 @@
       <!-- End Default Table Example -->
     </div>
   </div>
+  {{ $pegawai->links() }}
 @endsection
