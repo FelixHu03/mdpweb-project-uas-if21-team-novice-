@@ -50,7 +50,8 @@
           @endforeach
         </tbody>
       </table>
-      {{ $pegawai->links() }}
+      <div>{{ $pegawai->links() }}</div>
+      
       <!-- End Default Table Example -->
     </div>
   </div>
