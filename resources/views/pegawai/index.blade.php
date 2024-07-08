@@ -51,7 +51,7 @@
         </table>
         <!-- Pagination Links -->
         <div class="d-flex justify-content-center">
-            {{ $pegawai->perPage()}}
+            {{ $pegawainextPageUrl()}}
         </div>
         <!-- End Default Table Example -->
     </div>
