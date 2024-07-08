@@ -13,7 +13,7 @@ class LayananTambahanController extends Controller
      */
     public function index()
     {
-        $layanan_tambahan = LayananTambahan::all();
+        $layanan_tambahan = LayananTambahan::paginate(10);
         return view('layanan_tambahan.index')->with('layanan_tambahan', $layanan_tambahan);
     }
 

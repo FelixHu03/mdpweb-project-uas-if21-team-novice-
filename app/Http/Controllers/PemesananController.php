@@ -14,7 +14,7 @@ class PemesananController extends Controller
 {
     public function index()
     {
-        $pemesanan = Pemesanan::with('Kamar', 'LayananTambahan', 'Tamu')->get();
+        $pemesanan = Pemesanan::with('Kamar', 'LayananTambahan', 'Tamu')->paginate(10);
         return view('pemesanan.index', compact('pemesanan'));
     }
 

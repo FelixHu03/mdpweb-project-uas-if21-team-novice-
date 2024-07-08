@@ -53,6 +53,9 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+            {{ $pemesanan->links()}}
+        </div>
     </div>
 </div>
 @endsection

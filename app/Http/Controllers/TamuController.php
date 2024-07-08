@@ -12,7 +12,7 @@ class TamuController extends Controller
      */
     public function index()
     {
-        $tamu = Tamu::all();
+        $tamu = Tamu::paginate(10);
         return view('tamu.index')->with('tamu', $tamu);
     }
 

@@ -10,7 +10,7 @@ class KamarController extends Controller
 {
     public function index()
     {
-        $kamar =  Kamar::all();
+        $kamar =  Kamar::paginate(10);
         
         return view('kamar.index')
         -> with('kamar', $kamar);

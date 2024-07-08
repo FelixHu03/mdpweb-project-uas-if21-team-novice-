@@ -49,6 +49,9 @@
           @endforeach
         </tbody>
       </table>
+      <div class="d-flex justify-content-center">
+        {{ $kamar->links()}}
+    </div>
       <!-- End Default Table Example -->
     </div>
   </div>

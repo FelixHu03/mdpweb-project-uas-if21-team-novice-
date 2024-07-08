@@ -44,6 +44,9 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+            {{ $layanan_tambahan->links()}}
+        </div>
         <!-- End Default Table Example -->
         </div>
     </div>
